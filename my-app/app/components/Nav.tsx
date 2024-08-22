@@ -11,6 +11,7 @@ export default function Nav() {
         <li className="text-white flex items-center gap-2 p-2 rounded-full hover:text-blue-600 hover:bg-white transition-all">
           <FaHome />
           <span>Home</span>
+          <span>Home</span>
         </li>
       </Link>
     </nav>
