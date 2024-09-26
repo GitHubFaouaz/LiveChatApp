@@ -16,4 +16,3 @@ export default function Nav() {
     </nav>
   );
 }
-// li.text-white.flex.items-center.gap-2.rounded-full.hover:text-blue-600.hover:bg-white.transition-all un raccourci
