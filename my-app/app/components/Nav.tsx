@@ -13,6 +13,9 @@ export default function Nav() {
           <span>Home</span>
         </li>
       </Link>
+      <button className="text-white hover:bg-white hover:text-blue-600 p-3 rounded-full transition-all">
+        <FaUser />
+      </button>
     </nav>
   );
 }
