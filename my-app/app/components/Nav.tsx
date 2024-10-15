@@ -2,9 +2,16 @@
 "use client";
 
 import Link from "next/link";
+// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { FaHome, FaUser } from "react-icons/fa";
 
 export default function Nav() {
+  const router = useRouter();
+
+  const goToDashboar = () => {
+    router.push("/dashboard");
+  };
   return (
     <nav className="h-[70px] w-full flex justify-between items-center bg-blue-600 p-3">
       <Link href="/">
@@ -13,7 +20,10 @@ export default function Nav() {
           <span>Home</span>
         </li>
       </Link>
-      <button className="text-white hover:bg-white hover:text-blue-600 p-3 rounded-full transition-all">
+      <button
+        onClick={goToDashboar}
+        className="text-white hover:bg-white hover:text-blue-600 p-3 rounded-full transition-all"
+      >
         <FaUser />
       </button>
     </nav>
