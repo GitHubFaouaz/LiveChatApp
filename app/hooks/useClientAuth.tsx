@@ -1,17 +1,53 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+import { PrismaClient } from "@prisma/client";
 
-export const useClientAuth = () => {
-  const [use, setUser] = useState<User | null>(null);
-  const [isFetch, setFetch] = useState(true);
+// export const useClientAuth = () => {
+//   const [use, setUser] = useState<User | null>(null);
+//   const [isFetch, setFetch] = useState(true);
 
-  const router = useRouter();
+//   const router = useRouter();
 
-  const loginWithGoogle = async () => {
-    // const result = await signInWithPopup(auth,provider);
-    const user = result.user;
-    if (user) {
-      router.push("/dashboard");
-    }
-  };
-};
+//   const loginWithGoogle = async () => {
+//     // const result = await signInWithPopup(auth,provider);
+//     const user = result.user;
+//     if (user) {
+//       router.push("/dashboard");
+//     }
+//   };
+// };
+
+const prisma = new PrismaClient();
+
+const Handlers = NextAuth({
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+  ],
+
+  callbacks: {
+    async signIn({ user }) {
+      // Vérifiez si l'utilisateur existe déjà dans la base de données
+      const existingUser = await prisma.user.findUnique({
+        where: { email: user.email },
+      });
+
+      // Si l'utilisateur n'existe pas, enregistrez-le dans la base de données
+      if (!existingUser) {
+        await prisma.user.create({
+          data: {
+            name: user.name,
+            email: user.email,
+            image: user.image,
+          },
+        });
+      }
+
+      return true; // Return `true` to sign in the user
+    },
+  },
+});
