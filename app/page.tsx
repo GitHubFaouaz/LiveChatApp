@@ -1,6 +1,6 @@
 import { FcGoogle } from "react-icons/fc";
 import Nav from "./composant/Nav";
-
+import { useClientAuth } from "./hooks/useClientAuth";
 export default function Home() {
   return (
     <div>
