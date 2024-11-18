@@ -36,3 +36,5 @@ const Handlers = NextAuth({
     },
   },
 });
+
+export { Handlers as GET, Handlers as POST };
