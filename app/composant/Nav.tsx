@@ -1,12 +1,20 @@
 "use client";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaHome, FaUser } from "react-icons/fa";
-
+import clientAuth from "../utile/clientAuth";
 export default function Nav() {
+  const { loginClientWithGoogle } = clientAuth();
+  const { data: session } = useSession();
+
   const router = useRouter();
   const goToDashboard = () => {
-    router.push("/dashboard");
+    if (!session) {
+      router.push("/");
+    } else {
+      router.push("/dashboard");
+    }
   };
   return (
     <nav className="h-[70px] w-full flex justify-between items-center bg-blue-600 p-3">

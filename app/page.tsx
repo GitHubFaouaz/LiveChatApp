@@ -1,7 +1,7 @@
 "use client";
+
 import { FcGoogle } from "react-icons/fc";
 import Nav from "./composant/Nav";
-// import { signIn, useSession } from "next-auth/react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import clientAuth from "./utile/clientAuth";
 
