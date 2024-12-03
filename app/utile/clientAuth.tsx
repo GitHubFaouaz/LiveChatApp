@@ -1,18 +1,21 @@
-import React, { useEffect } from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useEffect } from "react";
+import { signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import userInfo from "./userInfo";
 export default function clientAuth() {
-  const { data: session } = useSession();
   const router = useRouter();
-  // console.log(session);
+  const user = userInfo();
+  console.log("user + ", user);
+
   useEffect(() => {
-    if (session) {
+    if (user) {
       // Redirige si l'utilisateur est connecté
       router.push("/dashboard");
     }
-  }, [session]);
+  }, [user]);
+
   const loginClientWithGoogle = async () => {
-    if (!session) {
+    if (!user) {
       await signIn("google");
     }
   };

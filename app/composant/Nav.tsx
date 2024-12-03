@@ -4,14 +4,15 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaHome, FaUser } from "react-icons/fa";
 import clientAuth from "../utile/clientAuth";
+import userInfo from "../utile/userInfo";
 export default function Nav() {
   const { loginClientWithGoogle } = clientAuth();
-  const { data: session } = useSession();
 
+  const user = userInfo();
   const router = useRouter();
   const goToDashboard = () => {
-    if (!session) {
-      router.push("/");
+    if (!user) {
+      router.push("/"); // page de connexion
     } else {
       router.push("/dashboard");
     }
