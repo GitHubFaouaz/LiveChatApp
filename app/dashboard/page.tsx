@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import clientAuth from "../utile/clientAuth";
 import userInfo from "../utile/userInfo";
 import Image from "next/image";
+import { FaSignOutAlt } from "react-icons/fa";
 export default function page() {
   const { loginClientWithGoogle } = clientAuth();
   // console.log(user());
@@ -25,7 +26,6 @@ export default function page() {
   };
   return (
     <div>
-      <p> page dashboard</p>
       {user && (
         <>
           <div className="w-full h-creen relative">
@@ -48,7 +48,19 @@ export default function page() {
                   Bienvenue <b> {user?.name}</b>
                 </li>
               </ul>
-              <button onClick={() => signOut()}>signOut</button>
+              <button
+                onClick={handleSignOut}
+                className="absolute top-2 right-2 block bg-red-500 px-3 py-1 text-white hover:bg-red-800 my-3 rounded-md "
+              >
+                <FaSignOutAlt />
+              </button>
+              <button
+                onClick={() => router.push("chat")}
+                className=" block bg-red-500 px-3 py-1 text-white hover:bg-yellow-800 my-3 rounded-md "
+              >
+                {" "}
+                Accéder au chat
+              </button>
             </div>
           </div>
         </>
