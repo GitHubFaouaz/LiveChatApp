@@ -1,15 +1,24 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import userInfo from "../utile/userInfo";
 
 export default function page() {
   const router = useRouter();
   const user = userInfo();
-  const [loading, isLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (!user) {
+      setIsLoading(false);
+    }
+  }, [user]);
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push("/");
+    }
+  }, [user, isLoading, router]);
 
-  return <div>page chat</div>;
+  return <div className="w-full h-full">page chat</div>;
 }

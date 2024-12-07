@@ -54,6 +54,7 @@ export default function Home() {
     </div>
   );
 }
+
 // export default function Component() {
 //   const { data: session } = useSession();
 //   console.log("sessionLog", session?.user);
