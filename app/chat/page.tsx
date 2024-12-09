@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import userInfo from "../utile/userInfo";
+import SendMessage from "../composant/SendMessage";
 
 export default function page() {
   const router = useRouter();
@@ -20,5 +21,10 @@ export default function page() {
     }
   }, [user, isLoading, router]);
 
-  return <div className="w-full h-full">page chat</div>;
+  return (
+    <div className="w-full h-full">
+      page chat
+      <SendMessage />
+    </div>
+  );
 }
