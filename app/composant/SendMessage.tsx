@@ -1,14 +1,15 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import userInfo from "../utile/userInfo";
+import createPost from "../utile/createPost";
 
 export default function SendMessage() {
-  type post = {
-    name?: string | null;
-    email?: string | null;
-    image?: string | null;
-    desc?: string | null;
-  };
+  // type post = {
+  //   name?: string | null;
+  //   email?: string | null;
+  //   image?: string | null;
+  //   desc?: string | null;
+  // };
 
   const [value, setValue] = useState("");
   const user = userInfo();
@@ -29,22 +30,14 @@ export default function SendMessage() {
       return;
     }
 
-    try {
-      const { name, email, image } = user;
-      await prisma.post.create({
-        data: {
-          // title: "Mon titre",
-          // image: "https://example.com/image.jpg",
-          name: name,
-          email: email ?? null,
-          image: image,
-          desc: value,
-        },
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    const { name, email, image } = user;
 
+    await createPost({
+      name: name ?? null,
+      email: email ?? null,
+      image: image ?? null,
+      value,
+    });
     setValue("");
   };
 
