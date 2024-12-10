@@ -1,10 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import userInfo from "../utile/userInfo";
-import { Prisma } from "@prisma/client";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 export default function SendMessage() {
   type post = {
@@ -32,9 +28,10 @@ export default function SendMessage() {
       console.error("Utilisateur non défini");
       return;
     }
+
     try {
       const { name, email, image } = user;
-      const newPost = await prisma.post.create({
+      await prisma.post.create({
         data: {
           // title: "Mon titre",
           // image: "https://example.com/image.jpg",
@@ -47,11 +44,15 @@ export default function SendMessage() {
     } catch (error) {
       console.log(error);
     }
+
     setValue("");
   };
 
   return (
-    <div className="bg-blue-200 fixed bottom-0 w-full py-10 flex items-center justify-center px-3 flex-col">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-blue-200 fixed bottom-0 w-full py-10 flex items-center justify-center px-3 flex-col"
+    >
       <div className="w-full flex items-center justify-center px-3">
         <input
           value={value}
@@ -68,6 +69,6 @@ export default function SendMessage() {
           <span>Envoyer</span>
         </button>
       </div>
-    </div>
+    </form>
   );
 }
