@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+
 export default function userInfo() {
   type user = {
     name?: string | null;
@@ -9,6 +10,7 @@ export default function userInfo() {
 
   const { data: session } = useSession();
   // console.log(session);
+
   const [user, setuser] = useState<user | null>(null);
   useEffect(() => {
     if (session && session.user) {

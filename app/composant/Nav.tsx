@@ -6,8 +6,6 @@ import { FaHome, FaUser } from "react-icons/fa";
 import clientAuth from "../utile/clientAuth";
 import userInfo from "../utile/userInfo";
 export default function Nav() {
-  const { loginClientWithGoogle } = clientAuth();
-
   const user = userInfo();
   const router = useRouter();
   const goToDashboard = () => {

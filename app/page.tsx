@@ -9,7 +9,7 @@ export default function Home() {
   const { data: session } = useSession();
   const { loginClientWithGoogle } = clientAuth();
 
-  // console.log(session);
+  console.log(session);
 
   return (
     <div>

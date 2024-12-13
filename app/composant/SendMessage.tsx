@@ -13,6 +13,7 @@ export default function SendMessage() {
 
   const [value, setValue] = useState("");
   const user = userInfo();
+  const userDbb = userDb();
 
   // pour recuperer la value de l'input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
