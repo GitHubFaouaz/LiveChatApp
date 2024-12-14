@@ -1,7 +1,9 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import userInfo from "../utile/userInfo";
 import createPost from "../utile/createPost";
+import userList from "../utile/usersList";
+// import { getUsers } from "../utile/usersList";
 
 export default function SendMessage() {
   type Post = {
@@ -13,6 +15,9 @@ export default function SendMessage() {
 
   const [value, setValue] = useState("");
   const user = userInfo();
+
+  // const usersList = UserList();
+  // console.log(" userList", usersList);
 
   // pour recuperer la value de l'input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +45,9 @@ export default function SendMessage() {
     });
     setValue("");
   };
+
+  const userDb = userList();
+  console.log(userDb);
 
   return (
     <form
