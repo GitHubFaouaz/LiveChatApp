@@ -4,16 +4,15 @@ import userInfo from "../utile/userInfo";
 import createPost from "../utile/createPost";
 
 export default function SendMessage() {
-  // type post = {
-  //   name?: string | null;
-  //   email?: string | null;
-  //   image?: string | null;
-  //   desc?: string | null;
-  // };
+  type Post = {
+    name?: string | null;
+    email?: string | null;
+    image?: string | null;
+    desc?: string | null;
+  };
 
   const [value, setValue] = useState("");
   const user = userInfo();
-  const userDbb = userDb();
 
   // pour recuperer la value de l'input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

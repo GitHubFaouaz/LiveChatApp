@@ -10,7 +10,6 @@ export default function userInfo() {
 
   const { data: session } = useSession();
   // console.log(session);
-
   const [user, setuser] = useState<user | null>(null);
   useEffect(() => {
     if (session && session.user) {

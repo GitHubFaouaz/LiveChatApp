@@ -4,10 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 import Nav from "./composant/Nav";
 import { useSession, signIn, signOut } from "next-auth/react";
 import clientAuth from "./utile/clientAuth";
+import UserList from "./utile/usersList";
 
 export default function Home() {
   const { data: session } = useSession();
   const { loginClientWithGoogle } = clientAuth();
+  const usersList = UserList();
+  console.log(" userList", usersList);
 
   console.log(session);
 
