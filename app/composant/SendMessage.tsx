@@ -44,10 +44,10 @@ export default function SendMessage() {
       value,
     });
     setValue("");
-  };
 
-  const userDb = userList();
-  console.log(userDb);
+    const userDb = userList();
+    console.log("userDb", userDb);
+  };
 
   return (
     <form
