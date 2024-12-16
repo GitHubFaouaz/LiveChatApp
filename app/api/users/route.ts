@@ -14,16 +14,3 @@ export async function GET(req: NextRequest) {
     await prisma.$disconnect();
   }
 }
-
-export default async function fetchUsers() {
-  try {
-    const users = await prisma.user.findMany();
-    return users;
-    // console.log(users);
-  } catch (error) {
-    console.error("Erreur lors de la récupération des utilisateurs :", error);
-    return null;
-  } finally {
-    await prisma.$disconnect();
-  }
-}

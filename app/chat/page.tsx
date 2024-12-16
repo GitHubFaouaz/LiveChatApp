@@ -24,7 +24,7 @@ export default function page() {
     }, []);
   };
   fetchList();
-  console.log("user", users);
+  console.log("userApi", users);
 
   return (
     <div>
