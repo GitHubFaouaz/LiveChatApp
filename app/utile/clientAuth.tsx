@@ -5,7 +5,7 @@ import userInfo from "./userInfo";
 export default function clientAuth() {
   const router = useRouter();
   const user = userInfo();
-  console.log("userUseSession + ", user);
+  // console.log("userUseSession + ", user);
 
   useEffect(() => {
     if (user) {
