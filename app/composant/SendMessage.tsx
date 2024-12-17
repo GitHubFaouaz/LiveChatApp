@@ -5,15 +5,18 @@ import createPost from "../utile/createPost";
 import { fetchUsers } from "../utile/usersList";
 
 type User = {
+  id: string;
   name?: string;
   email: string;
   image?: string;
+  // createdAt?: string;
+  // updatedAt?: string;
 };
 
 export default function SendMessage() {
   const [value, setValue] = useState("");
-  const user = userInfo();
-  const [usersList, setUsersList] = useState([]);
+  const userSignin = userInfo();
+  const [usersList, setUsersList] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   // recuperation de tous les users de la DB
@@ -23,9 +26,6 @@ export default function SendMessage() {
       .catch((error) => setError((error as Error).message));
   }, []);
 
-  console.log("usersList sendMessage", usersList);
-  usersList.map((user) => console.log(user));
-
   // pour recuperer la value de l'input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const valInput = e.target.value;
@@ -33,20 +33,31 @@ export default function SendMessage() {
     console.log(value);
   };
 
+  if (!userSignin) {
+    console.error("Utilisateur non connecté");
+    return;
+  }
+
+  console.log("liste users dans la DB", usersList);
+
+  // on verifie si lutilisateur connecté est dans la base de donnée pour ensuite recuperer son id
+  const findUserDb = usersList.find((user) => user.email === userSignin.email);
+  console.log("findUserDb", findUserDb);
+
   // pour soumettre le formulaire
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    if (!user) {
-      console.error("Utilisateur non défini");
+    if (!findUserDb) {
+      console.error("Utilisateur introuvable dans la base de données");
       return;
     }
 
-    const { name, email, image } = user;
+    const { name, email, image } = userSignin;
 
     // On appelle la fonction qui crée un post
     await createPost({
-      // idUser: name ?? null,
+      idUser: findUserDb?.id ?? null,
       name: name ?? null,
       email: email ?? null,
       image: image ?? null,
