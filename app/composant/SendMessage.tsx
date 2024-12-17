@@ -42,7 +42,7 @@ export default function SendMessage() {
 
   // on verifie si lutilisateur connecté est dans la base de donnée pour ensuite recuperer son id
   const findUserDb = usersList.find((user) => user.email === userSignin.email);
-  console.log("findUserDb", findUserDb);
+  console.log("findUserDb", findUserDb?.id);
 
   // pour soumettre le formulaire
   const handleSubmit = async (e: FormEvent) => {
