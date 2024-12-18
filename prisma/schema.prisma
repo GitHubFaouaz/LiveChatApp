@@ -19,7 +19,6 @@ model User {
 }
 model Post {
   id        String   @id @default(cuid())
-  idUser    String?
   name      String?
   email     String?   
   image     String?

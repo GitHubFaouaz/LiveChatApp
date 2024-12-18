@@ -1,5 +1,4 @@
 interface PostData {
-  idUser: string | null;
   name: string | null;
   email: string | null;
   image: string | null;
@@ -7,7 +6,6 @@ interface PostData {
 }
 
 export default async function createPost({
-  idUser,
   name,
   email,
   image,
@@ -20,7 +18,6 @@ export default async function createPost({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        idUser,
         name,
         email,
         image,
