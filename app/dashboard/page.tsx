@@ -7,7 +7,6 @@ import userInfo from "../utile/userInfo";
 import Image from "next/image";
 import { FaSignOutAlt } from "react-icons/fa";
 export default function page() {
-  const { loginClientWithGoogle } = clientAuth();
   // console.log(user());
   const user = userInfo();
 

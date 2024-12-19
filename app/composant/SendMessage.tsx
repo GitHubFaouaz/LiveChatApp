@@ -90,7 +90,9 @@ export default function SendMessage() {
           </div>
         </form>
       ) : (
-        <p>user nonconnecté</p>
+        <p>
+          Utilisateur non connecté. <a href="/login">Connectez-vous ici</a>
+        </p>
       )}
     </>
   );

@@ -2,7 +2,7 @@
 
 import { FcGoogle } from "react-icons/fc";
 import Nav from "./composant/Nav";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import clientAuth from "./utile/clientAuth";
 
 export default function Home() {
@@ -43,7 +43,6 @@ export default function Home() {
           ) : (
             <button
               onClick={loginClientWithGoogle}
-              // onClick={() => signIn()}
               className="bg-gray-200 hover:bg-gray-300 rounded-md p-2 flex items-center gap-2 "
             >
               <FcGoogle /> Se conecter avec google

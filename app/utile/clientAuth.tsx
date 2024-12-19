@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import userInfo from "./userInfo";
 export default function clientAuth() {
