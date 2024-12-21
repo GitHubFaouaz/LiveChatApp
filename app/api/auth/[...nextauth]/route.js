@@ -14,6 +14,7 @@ const Handlers = NextAuth({
 
   callbacks: {
     async signIn({ user }) {
+      //  router.push("/dashboard");
       // Vérifiez si l'utilisateur existe déjà dans la base de données
       const existingUser = await prisma.user.findUnique({
         where: { email: user.email },
