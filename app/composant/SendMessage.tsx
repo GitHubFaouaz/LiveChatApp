@@ -3,6 +3,7 @@ import { IoSend } from "react-icons/io5";
 import userInfo from "../utile/userInfo";
 import createPost from "../utile/createPost";
 import { fetchUsers } from "../utile/usersList";
+import { fetchPosts } from "../utile/listChat";
 
 type User = {
   name?: string;
@@ -17,7 +18,7 @@ export default function SendMessage() {
   const userSignin = userInfo();
   const [usersListDB, setUsersListDb] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
-
+  const [listPosts, setListPosts] = useState([]);
   // recuperation de tous les users de la DB
   useEffect(() => {
     fetchUsers()
@@ -25,15 +26,24 @@ export default function SendMessage() {
       .catch((error) => setError((error as Error).message));
   }, []);
 
+  useEffect(() => {
+    fetchPosts()
+      .then(setListPosts)
+      .catch((error) => setError((error as Error).message));
+  }, []);
+
   if (!userSignin) {
     console.error("Utilisateur non connecté");
     return;
   }
+
+  console.log("listPosts" + listPosts);
+
   // pour recuperer la value de l'input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const valInput = e.target.value;
     setValue(valInput);
-    console.log(value);
+    // console.log(value);
   };
 
   // console.log("liste users dans la DB", usersList);
@@ -42,7 +52,7 @@ export default function SendMessage() {
   const findUserDb = usersListDB.find(
     (user) => user.email === userSignin.email
   );
-  console.log("findUserDb", findUserDb);
+  // console.log("findUserDb", findUserDb);
 
   // pour soumettre le formulaire
   const handleSubmit = async (e: FormEvent) => {

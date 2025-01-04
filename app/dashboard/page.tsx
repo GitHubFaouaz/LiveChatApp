@@ -13,11 +13,15 @@ export default function page() {
   console.log("userInfo" + user);
   const router = useRouter();
 
-  useEffect(() => {
-    if (!user) {
-      router.push("/");
-    }
-  }, [user]);
+  // if (!user) {
+  //   router.push("/");
+  //   console.log("user non connecté");
+  // }
+  // useEffect(() => {
+  //   if (!user) {
+  //     // router.push("/");
+  //   }
+  // }, [user]);
 
   const handleSignOut = () => {
     signOut();

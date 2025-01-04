@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "app/api/auth/[...nextauth]/route.ts",
     "app/api/route.js",
-    "app/composant/CreatePost.tsx"
+    "app/composant/CreatePost.tsx",
+, "app/api/listChat/route.js"    "app/api/users/route.js"
   ],
   "exclude": ["node_modules"]
 }
