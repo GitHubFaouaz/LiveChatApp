@@ -13,16 +13,27 @@ type User = {
   // updatedAt?: string;
 };
 
+type Posts = {
+  id: string;
+  name: string;
+  email: string;
+  image: string;
+  desc: string; // createdAt DateTime @default(now())
+};
 export default function SendMessage() {
   const [value, setValue] = useState("");
   const userSignin = userInfo();
   const [usersListDB, setUsersListDb] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [listPosts, setListPosts] = useState([]);
+  const [listPosts, setListPosts] = useState<Posts[]>([]);
   // recuperation de tous les users de la DB
   useEffect(() => {
     fetchUsers()
-      .then(setUsersListDb)
+      .then((data) => {
+        setUsersListDb(data);
+        console.log(data + "data");
+      })
+
       .catch((error) => setError((error as Error).message));
   }, []);
 
@@ -37,7 +48,8 @@ export default function SendMessage() {
     return;
   }
 
-  console.log("listPosts" + listPosts);
+  // console.log("listPosts" + JSON.stringify(listPosts));
+  console.log("listPosts", JSON.stringify(listPosts, null, 2));
 
   // pour recuperer la value de l'input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

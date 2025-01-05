@@ -30,7 +30,8 @@
     "app/api/auth/[...nextauth]/route.ts",
     "app/api/route.js",
     "app/composant/CreatePost.tsx",
-, "app/api/listChat/route.js"    "app/api/users/route.js"
+    "app/api/listChat/route.ts",
+    "app/api/users/route.ts"
   ],
   "exclude": ["node_modules"]
 }
