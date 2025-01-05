@@ -48,7 +48,7 @@ export default function SendMessage() {
     return;
   }
 
-  // console.log("listPosts" + JSON.stringify(listPosts));
+  // console.log("listPosts" + listPosts);
   console.log("listPosts", JSON.stringify(listPosts, null, 2));
 
   // pour recuperer la value de l'input
