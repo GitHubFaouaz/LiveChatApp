@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import userInfo from "../utile/userInfo";
 import SendMessage from "../composant/SendMessage";
+import { fetchUsers } from "../utile/usersList";
 // import { fetchUsers } from "../utile/usersList";
 
 export default function page() {
@@ -14,29 +15,44 @@ export default function page() {
     image?: string;
   };
 
-  // const [users, setUsers] = useState<User[]>([]);
-  // const [error, setError] = useState<string | null>(null);
-  // const fetchList = () => {
-  //   useEffect(() => {
-  //     fetchUsers()
-  //       .then(setUsers)
-  //       .catch((error) => setError((error as Error).message));
-  //   }, []);
-  // };
-  // fetchList();
-  // console.log("userApiPageChat", users);
+  const userSignin = userInfo();
+  const [usersListDB, setUsersListDb] = useState<User[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  // const [listPosts, setListPosts] = useState<Posts[]>([]);
+  // console.log("listPosts", listPosts);
+
+  if (!userSignin) {
+    console.error("Utilisateur non connecté");
+    return;
+  }
+
+  // recuperation de tous les users de la DB
+  useEffect(() => {
+    fetchUsers()
+      .then((data) => {
+        setUsersListDb(data);
+        // console.log(data + "data");
+      })
+      .catch((error) => setError((error as Error).message));
+  }, []);
+
+  // on verifie si lutilisateur connecté est dans la base de donnée
+  const findUserDb = usersListDB.find(
+    (user) => user.email === userSignin?.email
+  );
 
   return (
     <div>
-      {/* <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.name} - {user.id}
-            {user.email}
-          </li>
-        ))}
-      </ul> */}
-      <SendMessage />
+      {findUserDb ? (
+        <>
+          <p>{findUserDb.name}</p>
+          <SendMessage />
+        </>
+      ) : (
+        <p>
+          Utilisateur non connecté. <a href="/login">Connectez-vous ici</a>
+        </p>
+      )}
     </div>
   );
 }
