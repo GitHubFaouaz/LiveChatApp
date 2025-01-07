@@ -1,30 +1,32 @@
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
 
 export default function userInfo() {
-  type User = {
-    name?: string | null;
-    email?: string | null;
-    image?: string | null;
-  };
-
   const { data: session } = useSession();
-  // console.log(session);
-  const [user, setuser] = useState<User | null>(null);
 
-  useEffect(() => {
-    if (session && session.user) {
-      setuser(session.user);
-    }
-  }, [session]);
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     if (session && session.user) {
-  //       setuser(session.user as User);
-  //     }
-  //   };
+  if (session && session.user) {
+    return session.user;
+  }
 
-  //   fetchUser();
-  // }, [session]);
-  return user;
+  return null;
 }
+
+// console.log(session);
+// const [user, setuser] = useState<User | null>(null);
+
+// useEffect(() => {
+//   if (session && session.user) {
+//     setuser(session.user);
+//   }
+// }, [session]);
+
+// type User = {
+//   name?: string | null;
+//   email?: string | null;
+//   image?: string | null;
+// };
+
+// return {
+//   name: session.user.name || null,
+//   email: session.user.email || null,
+//   image: session.user.image || null,
+// };

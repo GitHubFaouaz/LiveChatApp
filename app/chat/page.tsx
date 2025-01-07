@@ -15,7 +15,7 @@ export default function page() {
     image?: string;
   };
 
-  const userSignin = userInfo();
+  const userSignin = async () => userInfo();
 
   const [usersListDB, setUsersListDb] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -24,23 +24,18 @@ export default function page() {
 
   // recuperation de tous les users de la DB
   useEffect(() => {
-    fetchUsers()
-      .then((data) => {
-        setUsersListDb(data);
-        // console.log(data + "data");
-      })
-      .catch((error) => setError((error as Error).message));
+    async function fetchSession() {
+      fetchUsers()
+        .then((data) => {
+          setUsersListDb(data);
+          // console.log(data + "data");
+        })
+        .catch((error) => setError((error as Error).message));
+    }
+    fetchSession();
   }, []);
-  // // Récupération de la session utilisateur
-  // useEffect(() => {
-  //   async function fetchSession() {
-  //     const { data: session } = useSession();
-  //     if (session && session.user) {
-  //       setUserSignin(session.user as User); // Typage explicite ici
-  //     }
-  //   }
-  //   fetchSession();
-  // }, []);
+
+  // const {user,email,image} =  userSignin
 
   if (!userSignin) {
     console.error("Utilisateur non connecté");
