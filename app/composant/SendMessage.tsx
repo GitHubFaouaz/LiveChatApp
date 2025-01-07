@@ -7,13 +7,13 @@ import { fetchPosts } from "../utile/listChat";
 
 type User = {
   name?: string | null;
-  email: string | null;
+  email?: string | null;
   image?: string | null;
   // createdAt?: string;
   // updatedAt?: string;
 };
 type SendMessageProps = {
-  userSignin: User | null;
+  propsUserSignin: User | null;
 };
 type Posts = {
   id?: string;
@@ -23,9 +23,10 @@ type Posts = {
   desc?: string; // createdAt DateTime @default(now())
 };
 
-export default function SendMessage({ userSignin }: SendMessageProps) {
+export default function SendMessage({ propsUserSignin }: SendMessageProps) {
   const [value, setValue] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
+
   // pour recuperer la value de l'input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const valInput = e.target.value;
@@ -37,8 +38,9 @@ export default function SendMessage({ userSignin }: SendMessageProps) {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    if (userSignin) {
-      const { name, email, image } = userSignin;
+    if (propsUserSignin) {
+      const { name, email, image } = propsUserSignin;
+
       // On appelle la fonction qui crée un post
       await createPost({
         name: name ?? null,
