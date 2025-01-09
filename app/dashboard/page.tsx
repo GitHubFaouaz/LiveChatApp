@@ -2,26 +2,23 @@
 import React, { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import clientAuth from "../utile/clientAuth";
-import userInfo from "../utile/userInfo";
+// import clientAuth from "../utile/clientAuth";
 import Image from "next/image";
 import { FaSignOutAlt } from "react-icons/fa";
 export default function page() {
-  // console.log(user());
-  const user = userInfo();
+  const { data: session } = useSession();
 
-  console.log("userInfo" + user);
   const router = useRouter();
 
-  // if (!user) {
+  // if (!session?.user) {
   //   router.push("/");
-  //   console.log("user non connecté");
+  //   console.log("session?.user non connecté");
   // }
   // useEffect(() => {
-  //   if (!user) {
+  //   if (!session?.user) {
   //     // router.push("/");
   //   }
-  // }, [user]);
+  // }, [session?.user]);
 
   const handleSignOut = () => {
     signOut();
@@ -29,7 +26,7 @@ export default function page() {
   };
   return (
     <div>
-      {user && (
+      {session?.user && (
         <>
           <div className="w-full h-creen relative">
             <div className="w-full h-screen flex items-center flex-col gap-5 p-3 pt-20">
@@ -41,14 +38,14 @@ export default function page() {
               <ul className="flex flex-col justify-center items-center p-3 gap-2">
                 <li>
                   <Image
-                    src={`${user?.image}`}
+                    src={`${session?.user?.image}`}
                     alt="imageProfil"
                     width={100} // Spécifiez une largeur
                     height={100} // Spécifiez une hauteur
                   ></Image>
                 </li>
                 <li>
-                  Bienvenue <b> {user?.name}</b>
+                  Bienvenue <b> {session?.user?.name}</b>
                 </li>
               </ul>
               <button

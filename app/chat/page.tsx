@@ -2,9 +2,9 @@
 
 // import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import userInfo from "../utile/userInfo";
 import SendMessage from "../composant/SendMessage";
 import { fetchUsers } from "../utile/usersList";
+import { useSession } from "next-auth/react";
 // import { fetchUsers } from "../utile/usersList";
 
 export default function page() {
@@ -15,7 +15,8 @@ export default function page() {
     image?: string;
   };
 
-  const userSignin = async () => userInfo();
+  // const userSignin = async () => userInfo();
+  const { data: session } = useSession();
 
   const [usersListDB, setUsersListDb] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -37,14 +38,14 @@ export default function page() {
 
   // const {user,email,image} =  userSignin
 
-  if (!userSignin) {
+  if (!session || !session.user) {
     console.error("Utilisateur non connecté");
     // return "Utilisateur non connecté";
   }
 
   // on verifie si lutilisateur connecté est dans la base de donnée
   const findUserDb = usersListDB.find(
-    (user) => user.email === userSignin?.email
+    (user) => user.email === session?.user?.email
   );
 
   return (
