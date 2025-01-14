@@ -2,7 +2,6 @@ import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import createPost from "../utile/createPost";
 // import { fetchUsers } from "../utile/usersList";
-// import { fetchPosts } from "../utile/listChat";
 
 type User = {
   name?: string | null;

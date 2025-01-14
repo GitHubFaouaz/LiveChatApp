@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 
 export async function GET(req: NextRequest) {
   try {
-    const listChat = await prisma.post.findMany();
-    return NextResponse.json(listChat, { status: 200 });
+    const posts = await prisma.post.findMany();
+    return NextResponse.json(posts, { status: 200 });
   } catch (error) {
     console.log("Erreur lors de la récupération des posts :", error);
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
