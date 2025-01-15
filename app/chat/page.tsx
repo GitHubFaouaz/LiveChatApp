@@ -6,6 +6,8 @@ import SendMessage from "../composant/SendMessage";
 import { fetchUsers } from "../utile/usersList";
 import { useSession } from "next-auth/react";
 import { fetchPosts } from "../utile/posts";
+import Image from "next/image";
+import imgProfil from "../../public/imgProfil.webp";
 
 export default function page() {
   type User = {
@@ -72,9 +74,26 @@ export default function page() {
       {findUserDb ? (
         <>
           <div className="flex flex-col  ">
-            <p className="m-3">{posts.map((posts) => posts.email)}</p>
+            {posts.map((posts) => (
+              <div>
+                <div>
+                  <p> {posts.name}</p>
+                  <Image
+                    // src={posts?.email || "imgProfil.webp"}
+                    src={
+                      posts?.email?.startsWith("http")
+                        ? posts.email
+                        : "imgProfil.webp"
+                    }
+                    alt="imageProfil"
+                    width={500}
+                    height={300}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-          <p>{findUserDb.name}</p>
+
           <SendMessage propsUserSignin={findUserDb} />
         </>
       ) : (
