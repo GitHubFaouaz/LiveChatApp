@@ -18,6 +18,7 @@ export default function page() {
   };
 
   type Posts = {
+    id?: string;
     name?: string;
     email?: string;
     image?: string;
@@ -72,30 +73,30 @@ export default function page() {
   return (
     <div>
       {findUserDb ? (
-        <>
-          <div className="flex flex-col  ">
+        <div>
+          <div className="flex flex-col  gap-5">
             {posts.map((posts) => (
-              <div>
+              <div className="flex gap-5 bg-yellow-300">
                 <div>
-                  <p> {posts.name}</p>
                   <Image
-                    // src={posts?.email || "imgProfil.webp"}
                     src={
-                      posts?.email?.startsWith("http")
-                        ? posts.email
-                        : "imgProfil.webp"
+                      posts?.image?.startsWith("http") ? posts.image : imgProfil
                     }
                     alt="imageProfil"
-                    width={500}
-                    height={300}
+                    width={50}
+                    height={50}
+                    className="rounded-3xl"
                   />
+                </div>
+                <div className="">
+                  <p> {posts.name}</p>
+                  <p>{posts.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-
           <SendMessage propsUserSignin={findUserDb} />
-        </>
+        </div>
       ) : (
         <p>
           Utilisateur non connecté. <a href="/login">Connectez-vous ici</a>
