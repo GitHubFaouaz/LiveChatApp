@@ -1,0 +1,29 @@
+.PostShare {
+  background: black;
+  margin: 10px 0;
+  border-radius: 1rem;
+  /* box-shadow: $box-shadow; */
+}
+/* 
+$yellow: #f9d423;
+$orange: #e65c00;
+$aqua: #02d6dd;
+$aquaRgba: rgba(2, 214, 221, 0.9);
+
+$white: #fff;
+$black: black;
+$blackLight: #2f363e;
+
+$aquaBg: linear-gradient(
+  150deg,
+  transparent,
+  rgba(2, 214, 221, 0.9),
+  transparent
+);
+// background: #02d6dd;
+//     opacity: 0.9;
+
+$box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+  10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+  inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+  inset -5px -5px 15px rgba(0, 0, 0, 0.75); */

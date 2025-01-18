@@ -10,7 +10,7 @@ export default function clientAuth() {
   useEffect(() => {
     if (session?.user) {
       // Redirige si l'utilisateur est connecté
-      router.push("/dashboard");
+      router.push("/home");
     }
   }, [session?.user]);
 

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 // import clientAuth from "../utile/clientAuth";
 import Image from "next/image";
 import { FaSignOutAlt } from "react-icons/fa";
+import PostsShare from "../composant/PostShare";
 export default function page() {
   const { data: session } = useSession();
 
@@ -30,6 +31,7 @@ export default function page() {
         <>
           <div className="w-full h-creen relative">
             <div className="w-full h-screen flex items-center flex-col gap-5 p-3 pt-20">
+              <PostsShare />
               <span className="font-bold text-blue-600"> Votre compte</span>
 
               <h1 className="text-6xl uppercase font-black">
