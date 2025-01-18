@@ -5,6 +5,8 @@ import Nav from "./composant/Nav";
 import { useSession, signOut } from "next-auth/react";
 import clientAuth from "./utile/clientAuth";
 
+// page de connexion
+
 export default function Home() {
   const { data: session } = useSession();
   const { loginClientWithGoogle } = clientAuth();
