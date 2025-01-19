@@ -6,6 +6,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --colorOrange: #dc6e33;
+  --blackLight: #313030;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,4 +21,12 @@ body {
   /* background: var(--foreground); */
 
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.customLiNav {
+  background: #313030;
+  border-radius: 50%;
+  padding: 10px;
+  border: 3px double #dc6e33;
+  box-shadow: -2px 4px 5px #0a0a0a;
 }

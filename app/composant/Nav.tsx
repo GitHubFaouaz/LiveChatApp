@@ -45,38 +45,36 @@ const Nav = () => {
   return (
     <>
       <ul className="navigation">
-        <li>
+        <li className="customLiNav">
           <Link
             href="/home"
-            className={pathname === "/home" ? "active-link" : "link"}
+            // className={pathname === "/home" ? "active-link" : "link"}
+            className={pathname === "/home" ? "active-link" : ""}
           >
             <span className="icon">
               <FaHouse />
             </span>
-            {/* <span className="text">Accueil</span> */}
           </Link>
         </li>
 
-        <li>
-          <Link href="/home">
+        <li className="customLiNav">
+          <Link
+            href="/home"
+            className={pathname === "/home" ? "active-link" : ""}
+          >
             <span className="icon">
               <IoPersonOutline />{" "}
             </span>
-
-            <span className="text">Profile</span>
           </Link>
         </li>
-        <li>
+        <li className="customLiNav">
           <Link
             href="/home"
-            // to=""
-            // // className={({ isActive }) => (isActive ? "active" : "")}
-            // className={({ isActive }) => (isActive ? "" : "")}
+            className={pathname === "/home" ? "active-link" : ""}
           >
             <span className="icon">
               <TiMessages />
             </span>
-            <span className="text">Messages</span>
           </Link>
         </li>
 
@@ -89,13 +87,14 @@ const Nav = () => {
           </span>
           <span className="text">Settings</span>
         </li> */}
-        <li>
-          <Link href="/home">
+        <li className="customLiNav">
+          <Link
+            href="/home"
+            className={pathname === "/home" ? "active-link" : ""}
+          >
             <span className="icon">
               <IoIosLogOut />{" "}
             </span>
-
-            <span className="text">Deconnexion</span>
           </Link>
         </li>
       </ul>

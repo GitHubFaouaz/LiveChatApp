@@ -73,7 +73,7 @@ export default function page() {
       <div className="w-4/5 h-full px-[5px] pb-[15px]  bg-black rounded-3xl  shadow-customHome">
         <div className="w-full h-full flex items-center flex-col bg-bgHomedeg  rounded-3xl p-3">
           {/* barreNav  */}
-          <nav className="grid grid-cols-[1fr_2fr_3fr]  w-full items-center gap-5">
+          <nav className="grid grid-cols-[1fr_3fr_2fr]  w-full items-center gap-5">
             <div className="  ">
               <Title />
             </div>

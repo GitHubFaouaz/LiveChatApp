@@ -27,5 +27,8 @@ const config: Config = {
 };
 export default config;
 
-// border: 3px #4d4c4c dashed;
-// }
+// background: #313030;
+// border-radius: 50%;
+// padding: 10px;
+// border: 3px double #dc6e33;
+// box-shadow: -2px 4px 5px #0a0a0a;
