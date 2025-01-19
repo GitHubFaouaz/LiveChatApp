@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FaSignOutAlt } from "react-icons/fa";
 import Nav from "../composant/Nav";
+import Title from "../composant/Title";
 export default function page() {
   const { data: session } = useSession();
 
@@ -73,10 +74,10 @@ export default function page() {
         <div className="w-full h-full flex items-center flex-col bg-bgHomedeg  rounded-3xl p-3">
           {/* barreNav  */}
           <nav className="grid grid-cols-[1fr_2fr_3fr]  w-full items-center gap-5">
-            <div className="">fff</div>
-            <div className=" bg-[#000] text-white text-center p-2 rounded-3xl  ">
-              FRIEND SUGGESTIONS
+            <div className="  ">
+              <Title />
             </div>
+            <div className="">fff</div>
             <div className="w-full ">
               <Nav />
             </div>

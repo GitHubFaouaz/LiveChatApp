@@ -33,70 +33,70 @@
 //   );
 // }
 
-// import { NavLink } from "react-router-dom";
 import { FaHouse } from "react-icons/fa6";
 import "./_nav.scss";
 import { IoPersonOutline } from "react-icons/io5";
 import { TiMessages } from "react-icons/ti";
 import { IoIosLogOut } from "react-icons/io";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 const Nav = () => {
+  const pathname = usePathname();
   return (
     <>
       <ul className="navigation">
         <li>
-          {/* <NavLink
-            to="../home"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          > */}
-          <span className="icon">
-            <FaHouse />
-          </span>
-          <span className="text">Accueil</span>
-          {/* </NavLink> */}
+          <Link
+            href="/home"
+            className={pathname === "/home" ? "active-link" : "link"}
+          >
+            <span className="icon">
+              <FaHouse />
+            </span>
+            {/* <span className="text">Accueil</span> */}
+          </Link>
         </li>
 
         <li>
-          {/* <NavLink
-            to={`/profile/${user._id}`}
-            className={({ isActive }) => (isActive ? "active" : "")}
-          > */}
-          <span className="icon">
-            <IoPersonOutline />{" "}
-          </span>
+          <Link href="/home">
+            <span className="icon">
+              <IoPersonOutline />{" "}
+            </span>
 
-          <span className="text">Profile</span>
-          {/* </NavLink> */}
+            <span className="text">Profile</span>
+          </Link>
         </li>
         <li>
-          {/* <NavLink
-            to=""
-            // className={({ isActive }) => (isActive ? "active" : "")}
-            className={({ isActive }) => (isActive ? "" : "")}
-          > */}
-          <span className="icon">
-            <TiMessages />
-          </span>
-          <span className="text">Messages</span>
-          {/* </NavLink> */}
+          <Link
+            href="/home"
+            // to=""
+            // // className={({ isActive }) => (isActive ? "active" : "")}
+            // className={({ isActive }) => (isActive ? "" : "")}
+          >
+            <span className="icon">
+              <TiMessages />
+            </span>
+            <span className="text">Messages</span>
+          </Link>
         </li>
 
         {/*   <li>
           <span className="icon">
       
-            <NavLink to="">
+            // <Link to="">
               <ion-icon name="settings-outline"></ion-icon>
-            </NavLink>
+            // </Link>
           </span>
           <span className="text">Settings</span>
         </li> */}
         <li>
-          {/* <NavLink to={""} className={({ isActive }) => (isActive ? "" : "")}> */}
-          <span className="icon">
-            <IoIosLogOut />{" "}
-          </span>
+          <Link href="/home">
+            <span className="icon">
+              <IoIosLogOut />{" "}
+            </span>
 
-          <span className="text">Deconnexion</span>
-          {/* </NavLink> */}
+            <span className="text">Deconnexion</span>
+          </Link>
         </li>
       </ul>
     </>

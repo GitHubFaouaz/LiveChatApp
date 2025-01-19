@@ -18,6 +18,8 @@ const config: Config = {
       },
       boxShadow: {
         customHome: "0px 30px 40px 7px #dc6e33",
+        shadowTitle:
+          " -5px 5px 7px 0px #000, inset 0px 0px 2px 2px white, inset 0px 0px 3px 9px #2f363e, -5px 10px 10px black",
       },
     },
   },
@@ -25,7 +27,5 @@ const config: Config = {
 };
 export default config;
 
-// box-shadow: -5px 5px 7px 0px #000, inset 0px 0px 2px 2px white, inset 0px 0px 3px 9px #2f363e, -5px 10px 10px black;
-// background: linear-gradient(90deg, #2b2b2b, #797878 40%, #797878 60%, #2b2b2b);
 // border: 3px #4d4c4c dashed;
 // }
