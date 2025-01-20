@@ -60,7 +60,7 @@ const Nav = () => {
         <li className="customLiNav">
           <Link
             href="/home"
-            className={pathname === "/home" ? "active-link" : ""}
+            className={pathname === "/profil" ? "active-link" : ""}
           >
             <span className="icon">
               <IoPersonOutline />{" "}
@@ -70,7 +70,7 @@ const Nav = () => {
         <li className="customLiNav">
           <Link
             href="/home"
-            className={pathname === "/home" ? "active-link" : ""}
+            className={pathname === "/chat" ? "active-link" : ""}
           >
             <span className="icon">
               <TiMessages />
@@ -90,7 +90,7 @@ const Nav = () => {
         <li className="customLiNav">
           <Link
             href="/home"
-            className={pathname === "/home" ? "active-link" : ""}
+            className={pathname === "/logout" ? "active-link" : ""}
           >
             <span className="icon">
               <IoIosLogOut />{" "}

@@ -70,9 +70,16 @@ export default function page() {
     //   )}
     // </div>
     <div className="w-full h-full flex items-center justify-center min-h-screen bg-bgHomedeg ">
-      <div className="w-4/5 h-full px-[5px] pb-[15px]  bg-black rounded-3xl  shadow-customHome">
+      <div className="absolute top-[20%]  h-[200px] bg-red-200 flex items-center justify-center  bg-gradient-to-r from-cyan-500 to-blue-500 w-[100%] customBarreDecoHome ">
+        {/* barre deco */}
+      </div>
+      <div className="absolute top-[70%]  h-[200px] bg-red-200 flex items-center justify-center  bg-gradient-to-r from-cyan-500 to-blue-500 w-[100%] customBarreDecoHome ">
+        {/* barre deco */}
+      </div>
+
+      <div className="w-4/5 h-full px-[5px] pb-[15px]  bg-black rounded-3xl  shadow-customHome max-w-[1700px] z-10 border-t-[1px] border-solid border-[#cdcdcd]-500  ">
         <div className="w-full h-full flex items-center flex-col bg-bgHomedeg  rounded-3xl p-3">
-          {/* barreNav  */}
+          {/* barreNav */}
           <nav className="grid grid-cols-[1fr_3fr_2fr]  w-full items-center gap-5">
             <div className="  ">
               <Title />
@@ -82,9 +89,8 @@ export default function page() {
               <Nav />
             </div>
           </nav>
-          <main className="flex">
+          <main className="grid grid-cols-[2fr_3fr_1fr]">
             <section>
-              {" "}
               section 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aperiam sed libero aut iusto dolorum neque iure et eligendi sequi,
               totam provident rem qui voluptates labore voluptatum maiores.

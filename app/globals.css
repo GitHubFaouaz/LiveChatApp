@@ -29,4 +29,9 @@ body {
   padding: 10px;
   border: 3px double #dc6e33;
   box-shadow: -2px 4px 5px #0a0a0a;
+  transform: rotateX(30deg);
+}
+
+.customBarreDecoHome {
+  background: repeating-radial-gradient(#272727, transparent 100px);
 }
