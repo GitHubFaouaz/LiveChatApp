@@ -77,7 +77,7 @@ export default function page() {
         {/* barre deco */}
       </div>
 
-      <div className="w-4/5 h-full px-[5px] pb-[15px]  bg-black rounded-3xl  shadow-customHome max-w-[1700px] z-10 border-t-[1px] border-solid border-[#cdcdcd]-500  ">
+      <div className="w-4/5 h-full px-[5px] pb-[15px]  bg-black rounded-3xl rotateTable  shadow-customHome max-w-[1700px] z-10 border-t-[1px] border-solid border-[#cdcdcd]-500  ">
         <div className="w-full h-full flex items-center flex-col bg-bgHomedeg  rounded-3xl p-3">
           {/* barreNav */}
           <nav className="grid grid-cols-[1fr_3fr_2fr]  w-full items-center gap-5">

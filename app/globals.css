@@ -35,3 +35,7 @@ body {
 .customBarreDecoHome {
   background: repeating-radial-gradient(#272727, transparent 100px);
 }
+
+.rotateTable {
+  transform: rotateX(30deg);
+}
