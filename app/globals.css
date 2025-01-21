@@ -39,3 +39,45 @@ body {
 .rotateTable {
   transform: rotateX(30deg);
 }
+
+/* ------------------------ containePosts --------------- */
+.customContainePosts {
+  border-radius: 26% 8% 10% 4% / 4% 18% 10% 18%;
+  clip-path: polygon(
+    0 5%,
+    13% 0,
+    51% 0,
+    68% 3%,
+    86% 0,
+    100% 3%,
+    100% 100%,
+    80% 100%,
+    60% 100%,
+    27% 100%,
+    14% 100%,
+    0 100%
+  );
+}
+.customContainePosts > div:first-child {
+  border-radius: 26% 13% 0% 0% / 13% 35% 10% 18%;
+  color: red;
+  clip-path: polygon(
+    0 8%,
+    13% 0,
+    51% 0,
+    67% 0,
+    86% 0,
+    99% 8%,
+    100% 100%,
+    80% 100%,
+    60% 100%,
+    27% 100%,
+    14% 100%,
+    0 100%
+  );
+}
+.customContainePosts > div:last-child {
+  /* clip-path: polygon(8% 6%, 94% 5%, 100% 100%, 4% 95%); */
+  border-radius: 0 0 35px 15px;
+  color: red;
+}

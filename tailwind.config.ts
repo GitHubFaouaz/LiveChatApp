@@ -16,6 +16,7 @@ const config: Config = {
         bgHomedeg:
           "linear-gradient(90deg, #2b2b2b, #797878  40%, #797878  60%, #2b2b2b)",
       },
+
       boxShadow: {
         customHome: "0px 30px 40px 7px #dc6e33",
         shadowTitle:

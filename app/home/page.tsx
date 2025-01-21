@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FaSignOutAlt } from "react-icons/fa";
 import Nav from "../composant/Nav";
 import Title from "../composant/Title";
+import imgProfil from "../../public/imgProfil.webp";
 export default function page() {
   const { data: session } = useSession();
 
@@ -107,9 +108,32 @@ export default function page() {
               exercitationem
             </section>
             <section className="text-red-400">
-              <div className="flex flex-col  gap-3 bg-red-200 pr-1 pl-3 pt-4 pb-2 ">
-                <div className=" h-[100px] bg-gradient-to-r from-[#313030] via-[#333] to-[#313030]"></div>
-                <div className=" h-[100px] bg-yellow-200"></div>
+              <div className="flex flex-col  gap-1 bg-[#000] pr-1 pl-3 pt-4 pb-2 rounded-3xl customContainePosts ">
+                <div className="grid grid-cols-[1fr_3fr_1fr] items-center justify-center   bg-gradient-to-r from-[#313030] via-[#333] to-[#313030] px-1 ">
+                  <div className=" w-[50px]  border border-[var(--colorOrange)] border-2 rounded-3xl flex items-center justify-center ">
+                    <Image
+                      src={imgProfil}
+                      alt="imgProfil"
+                      // height={50}
+                      // width={50}
+                      className="rounded-3xl "
+                    />
+                  </div>
+                  <div>
+                    <p>nom:faouaz</p>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Amet eos tenetur iste unde ipsum, dolorum totam fugit ab
+                    </p>
+                  </div>
+                  <div>
+                    <button className=" flex items-center py-1 px-3 rounded-2xl bg-[var(--colorOrange)]">
+                      faouaz
+                    </button>
+                  </div>
+                </div>
+
+                <div className=" h-[100px] bg-yellow-200 "></div>
                 <div className=" h-[100px] bg-yellow-200"></div>
                 <div className=" h-[100px] bg-yellow-200"></div>
               </div>
