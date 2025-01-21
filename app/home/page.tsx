@@ -107,19 +107,12 @@ export default function page() {
               exercitationem
             </section>
             <section className="text-red-400">
-              section 2 sequi officia possimus doloremque consequuntur
-              repudiandae ipsa magni! Ducimus voluptates magnam ab facilis vitae
-              perferendis aut. Beatae consequuntur deserunt dolorum asperiores
-              illo omnis adipisci dicta laborum voluptates neque in, tenetur
-              provident fugiat! Doloremque similique laboriosam non autem,
-              asperiores culpa quisquam! Odit officia quos optio sunt tenetur
-              quam quasi itaque ex. Dolorum voluptatum dolor obcaecati
-              aspernatur, rerum necessitatibus vel! Architecto corrupti unde
-              debitis minus accusamus perferendis eveniet explicabo natus quidem
-              maxime culpa velit facere veniam beatae autem labore ullam
-              provident earum, corporis repellat accusantium consectetur.
-              Consectetur vero nobis, enim reprehenderit officia provident
-              temporibus fugiat sint.
+              <div className="flex flex-col  gap-3 bg-red-200 pr-1 pl-3 pt-4 pb-2 ">
+                <div className=" h-[100px] bg-gradient-to-r from-[#313030] via-[#333] to-[#313030]"></div>
+                <div className=" h-[100px] bg-yellow-200"></div>
+                <div className=" h-[100px] bg-yellow-200"></div>
+                <div className=" h-[100px] bg-yellow-200"></div>
+              </div>
             </section>
             <section>
               section 3 sequi officia possimus doloremque consequuntur

@@ -69,7 +69,7 @@ const Nav = () => {
         </li>
         <li className="customLiNav">
           <Link
-            href="/home"
+            href="/chat"
             className={pathname === "/chat" ? "active-link" : ""}
           >
             <span className="icon">
