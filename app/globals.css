@@ -60,7 +60,6 @@ body {
 }
 .customContainePosts > div:first-child {
   border-radius: 26% 13% 0% 0% / 13% 35% 10% 18%;
-  color: red;
   clip-path: polygon(
     0 8%,
     13% 0,

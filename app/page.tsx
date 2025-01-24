@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <section className="w-full h-screen flex items-center justify-center p-3">
         <div className="max-w-[1000px] m-auto flex items-center justify-center flex-col gap-5 text-center">
           <h1 className="text-6xl uppercase font-black ">
