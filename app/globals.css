@@ -41,6 +41,7 @@ body {
 }
 
 /* ------------------------ containePosts --------------- */
+
 .customContainePosts {
   border-radius: 26% 8% 10% 4% / 4% 18% 10% 18%;
   clip-path: polygon(
@@ -58,6 +59,31 @@ body {
     0 100%
   );
 }
+
+.customContainePosts::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 147px;
+  width: 5px;
+  height: 65px;
+  background: #dc6e33;
+  clip-path: polygon(100% 0, 69% 53%, 34% 100%, 0 100%, 0% 50%, 0 0);
+}
+
+.customContainePosts::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 414px;
+  /* bottom: 64px; */
+  width: 5px;
+  height: 65px;
+  background: #dc6e33;
+  clip-path: polygon(100% 0, 69% 53%, 34% 100%, 0 100%, 0% 50%, 0 0);
+  transform: rotateZ(87deg);
+}
+
 .customContainePosts > div:first-child {
   border-radius: 26% 13% 0% 0% / 13% 35% 10% 18%;
   clip-path: polygon(
@@ -78,5 +104,5 @@ body {
 .customContainePosts > div:last-child {
   /* clip-path: polygon(8% 6%, 94% 5%, 100% 100%, 4% 95%); */
   border-radius: 0 0 35px 15px;
-  color: red;
+  /* color: red; */
 }

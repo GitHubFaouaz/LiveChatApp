@@ -2,17 +2,13 @@
 import React, { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-// import clientAuth from "../utile/clientAuth";
-import Image from "next/image";
 import { FaSignOutAlt } from "react-icons/fa";
+// import clientAuth from "../utile/clientAuth";
+
 import Nav from "../composant/Nav";
 import Title from "../composant/Title";
-import imgProfil from "../../public/imgProfil.webp";
-import { IoIosMusicalNotes } from "react-icons/io";
-import { MdOutlineMusicVideo } from "react-icons/md";
-import { RiNeteaseCloudMusicFill } from "react-icons/ri";
-import { LuListMusic } from "react-icons/lu";
-import { SiNeteasecloudmusic } from "react-icons/si";
+import Posts from "../composant/Posts";
+
 export default function page() {
   const { data: session } = useSession();
 
@@ -112,43 +108,8 @@ export default function page() {
               inventore velit architecto necessitatibus. Inventore, nulla
               exercitationem
             </section>
-            <section className="max-w-[800px] min-w-[500px]">
-              <div className="flex flex-col  gap-1 bg-[#000] pr-1 pl-3 pt-4 pb-2 rounded-3xl customContainePosts ">
-                <div className="grid grid-cols-[15%_70%_15%] items-center justify-center   bg-gradient-to-r from-[#313030] via-[#333] to-[#313030] px-1 py-2 ">
-                  <div className=" w-[50px]  border border-[var(--colorOrange)] border-2 rounded-3xl flex items-center justify-center  ">
-                    <Image
-                      src={imgProfil}
-                      alt="imgProfil"
-                      // height={50}
-                      // width={50}
-                      className="rounded-3xl "
-                    />
-                  </div>
-                  <div>
-                    <p>nom:faouaz</p>
-                    <p className="text-white">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Amet eos tenetur iste unde ipsum, dolorum totam fugit ab
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <div className="flex gap-1">
-                      <IoIosMusicalNotes className="w-[5px]  text-white" />
-                      <MdOutlineMusicVideo className="w-[5px]  text-white" />
-                      <RiNeteaseCloudMusicFill className="w-[5px]  text-white" />
-                      <LuListMusic className="w-[9px]  text-white   " />
-                      <SiNeteasecloudmusic className="w-[12px]  text-white  rounded-3xl shadow-     customIcon" />
-                    </div>
-                    <button className=" flex items-center justify-center py-1 px-3 rounded-2xl bg-[#000] text-white border  border-[var(--colorOrange)] border-1 rounded-1xl hover:bg-[var(--colorOrange)]   ">
-                      faouaz
-                    </button>
-                  </div>
-                </div>
-
-                <div className=" h-[100px] bg-yellow-200 "></div>
-                <div className=" h-[100px] bg-yellow-200"></div>
-                <div className=" h-[100px] bg-yellow-200"></div>
-              </div>
+            <section className="max-w-[800px] min-w-[500px] relative sectionPost">
+              <Posts />
             </section>
             <section>
               section 3 sequi officia possimus doloremque consequuntur
