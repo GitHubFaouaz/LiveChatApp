@@ -40,11 +40,12 @@ import { TiMessages } from "react-icons/ti";
 import { IoIosLogOut } from "react-icons/io";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 const Nav = () => {
   const pathname = usePathname();
   return (
     <>
-      <ul className="navigation">
+      <ul className="navigation  w-full ">
         <li className="customLiNav">
           <Link
             href="/home"

@@ -29,7 +29,7 @@ body {
   padding: 10px;
   border: 3px double #dc6e33;
   box-shadow: -2px 4px 5px #0a0a0a;
-  transform: rotateX(30deg);
+  transform: rotateX(20deg);
 }
 
 .customBarreDecoHome {
@@ -74,14 +74,13 @@ body {
 .customContainePosts::after {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 414px;
-  /* bottom: 64px; */
-  width: 5px;
-  height: 65px;
+  right: 154px;
+  top: 358px;
+  width: 6px;
+  height: 130px;
   background: #dc6e33;
   clip-path: polygon(100% 0, 69% 53%, 34% 100%, 0 100%, 0% 50%, 0 0);
-  transform: rotateZ(87deg);
+  transform: rotateZ(88deg);
 }
 
 .customContainePosts > div:first-child {

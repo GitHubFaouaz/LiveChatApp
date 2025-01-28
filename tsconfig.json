@@ -31,7 +31,8 @@
     "app/api/route.js",
     "app/composant/CreatePost.tsx",
     "app/api/posts/route.ts",
-    "app/api/users/route.ts"
+    "app/api/users/route.ts",
+    "app/pageLogin/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

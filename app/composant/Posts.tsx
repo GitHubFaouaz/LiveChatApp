@@ -23,7 +23,7 @@ export default function Posts() {
           />
         </div>
         <div>
-          <p>nom:faouaz</p>
+          <p className="text-[var(--colorOrange)]">faouaz</p>
           <p className="text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet eos
             tenetur iste unde ipsum, dolorum totam fugit ab
