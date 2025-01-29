@@ -1,0 +1,122 @@
+#cube {
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  background: repeating-radial-gradient(black, transparent 26px);
+  /* La propriété transform-style définit si les éléments-fils d'un éléments sont positionnés dans l'espace tridimensionnel ou s'ils sont aplatis dans le plan de l'élément */
+  /* transform: rotateY(30deg) rotateZ(30deg) rotateX(0deg); */
+  animation: spin 30s infinite linear;
+  .side {
+    position: absolute;
+    opacity: 0.8;
+    width: var(--size);
+    height: var(--size);
+  }
+  #front {
+    // background: url(./media/basic-pics/1.jpg) no-repeat center/cover;
+    transform: translateZ(calc(var(--size) / 2));
+    /*translate z pour la profondeur  et calc pour calculer de façon dynamique  au lieu de mettre  150px directement */
+  }
+  #top {
+    transform: rotateX(90deg) translateY(calc(-1 * (var(--size) / 2)));
+
+    transform-origin: top;
+    background: red;
+  }
+  #bottom {
+    /* background: url(./media/basic-pics/3.jpg) no-repeat center/cover; */
+    transform: rotateX(90deg) translateY(calc(var(--size) / 2));
+    transform-origin: bottom;
+    background: #000;
+  }
+  #right {
+    /* background: url(./media/basic-pics/4.jpg) no-repeat center/cover; */
+    transform: rotateY(-270deg) translateX(calc(var(--size) / 2));
+
+    transform-origin: right;
+    background: #14a2c9;
+  }
+  #left {
+    /* background: url(./media/basic-pics/5.jpg) no-repeat center/cover; */
+    transform: rotateY(270deg) translateX(calc(-1 * (var(--size) / 2)));
+
+    transform-origin: left;
+    background: #1ab112;
+  }
+  #back {
+    /* background: url(./media/basic-pics/8.jpg) no-repeat center/cover; */
+    transform: rotateY(-180deg) translateZ(calc((var(--size) / 2)));
+    background: #550997;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+  }
+}
+
+#cube1 {
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  // background: repeating-radial-gradient(black, transparent 26px);
+  /* La propriété transform-style définit si les éléments-fils d'un éléments sont positionnés dans l'espace tridimensionnel ou s'ils sont aplatis dans le plan de l'élément */
+  transform: rotateY(-10deg) rotateZ(0deg) rotateX(-80deg);
+  // animation: spin 30s infinite linear;
+  .side {
+    position: absolute;
+    opacity: 0.8;
+    width: var(--size);
+    height: var(--size);
+  }
+  #front {
+    // background: url(./media/basic-pics/1.jpg) no-repeat center/cover;
+    transform: translateZ(calc(var(--size) / 2));
+    /*translate z pour la profondeur  et calc pour calculer de façon dynamique  au lieu de mettre  150px directement */
+    background: rgb(183, 255, 0);
+  }
+  // #top {
+  //   transform: rotateX(90deg) translateY(calc(-1 * (var(--size) / 2)));
+
+  //   transform-origin: top;
+  //   background: red;
+  // }
+  // #bottom {
+  //   /* background: url(./media/basic-pics/3.jpg) no-repeat center/cover; */
+  //   transform: rotateX(90deg) translateY(calc(var(--size) / 2));
+  //   transform-origin: bottom;
+  //   background: #000;
+  // }
+  #right {
+    /* background: url(./media/basic-pics/4.jpg) no-repeat center/cover; */
+    transform: rotateY(-270deg) translateX(calc(var(--size) / 2));
+
+    transform-origin: right;
+    background: #14a2c9;
+  }
+  #left {
+    /* background: url(./media/basic-pics/5.jpg) no-repeat center/cover; */
+    transform: rotateY(270deg) translateX(calc(-1 * (var(--size) / 2)));
+
+    transform-origin: left;
+    background: #1ab112;
+  }
+  #back {
+    /* background: url(./media/basic-pics/8.jpg) no-repeat center/cover; */
+    transform: rotateY(-180deg) translateZ(calc((var(--size) / 2)));
+    background: #550997;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+  }
+}
