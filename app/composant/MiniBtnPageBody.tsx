@@ -16,7 +16,7 @@ export default function MiniBtnPageBody() {
       </div>
 
       <div
-        className="absolute top-[100px] right-[20px] text-[#000]  rounded-3xl w-[25px] h-[25px]"
+        className="absolute top-[100px] right-[50px] text-[#000]  rounded-3xl w-[25px] h-[25px]"
         id="cube1"
       >
         <div className="side" id="front"></div>

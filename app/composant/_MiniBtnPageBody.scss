@@ -72,12 +72,13 @@
     opacity: 0.8;
     width: var(--size);
     height: var(--size);
+    background: black;
   }
   #front {
     // background: url(./media/basic-pics/1.jpg) no-repeat center/cover;
     transform: translateZ(calc(var(--size) / 2));
     /*translate z pour la profondeur  et calc pour calculer de façon dynamique  au lieu de mettre  150px directement */
-    background: rgb(183, 255, 0);
+    // background: rgb(183, 255, 0);
   }
   // #top {
   //   transform: rotateX(90deg) translateY(calc(-1 * (var(--size) / 2)));
@@ -96,19 +97,19 @@
     transform: rotateY(-270deg) translateX(calc(var(--size) / 2));
 
     transform-origin: right;
-    background: #14a2c9;
+    // background: #14a2c9;
   }
   #left {
     /* background: url(./media/basic-pics/5.jpg) no-repeat center/cover; */
     transform: rotateY(270deg) translateX(calc(-1 * (var(--size) / 2)));
 
     transform-origin: left;
-    background: #1ab112;
+    // background: #1ab112;
   }
   #back {
     /* background: url(./media/basic-pics/8.jpg) no-repeat center/cover; */
     transform: rotateY(-180deg) translateZ(calc((var(--size) / 2)));
-    background: #550997;
+    // background: #550997;
   }
 
   @keyframes spin {

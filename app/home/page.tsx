@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { FaSignOutAlt } from "react-icons/fa";
+// import { FaSignOutAlt } from "react-icons/fa";
 import BarreDeco from "../composant/BarreDeco";
 
 import Nav from "../composant/Nav";
@@ -10,6 +10,7 @@ import Title from "../composant/Title";
 import Posts from "../composant/Posts";
 import PostShar from "../composant/PostShar";
 import MiniBtnPageBody from "../composant/MiniBtnPageBody";
+import ButtonEnregistrement from "../composant/ButtonEnregistrement";
 
 export default function page() {
   const { data: session } = useSession();
@@ -85,6 +86,7 @@ export default function page() {
           </header>
           <main className="grid grid-cols-[2fr_3fr_1fr]">
             <section>
+              <ButtonEnregistrement />
               section 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aperiam sed libero aut iusto dolorum neque iure et eligendi sequi,
               totam provident rem qui voluptates labore voluptatum maiores.
