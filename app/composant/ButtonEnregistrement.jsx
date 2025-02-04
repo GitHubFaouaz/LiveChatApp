@@ -5,7 +5,9 @@ export default function ButtonEnregistrement() {
   return (
     <div>
       <div className="containeButtonEnregistrement">
-        <button></button>
+        <button>
+          <span></span>
+        </button>
       </div>
     </div>
   );
