@@ -86,7 +86,10 @@ export default function page() {
           </header>
           <main className="grid grid-cols-[2fr_3fr_1fr]">
             <section>
-              <ButtonEnregistrement />
+              <div className="flex gap-2">
+                <ButtonEnregistrement />
+                <div className="h-[200px] w-[50px] bg-red-200 p-2">dd</div>
+              </div>
               section 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aperiam sed libero aut iusto dolorum neque iure et eligendi sequi,
               totam provident rem qui voluptates labore voluptatum maiores.
