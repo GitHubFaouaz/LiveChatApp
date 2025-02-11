@@ -10,7 +10,8 @@ import Title from "../composant/Title";
 import Posts from "../composant/Posts";
 import PostShar from "../composant/PostShar";
 import MiniBtnPageBody from "../composant/MiniBtnPageBody";
-import ButtonEnregistrement from "../composant/ButtonEnregistrement";
+import RecordButton from "../composant/RecordButton";
+import BarreRecordButton from "../composant/BarreRecordButton";
 
 export default function page() {
   const { data: session } = useSession();
@@ -87,23 +88,15 @@ export default function page() {
           <main className="grid grid-cols-[2fr_3fr_1fr]">
             <section>
               <div className="flex gap-2">
-                <ButtonEnregistrement />
-                <div className="h-[200px] w-[50px] bg-red-200 p-2">dd</div>
+                <RecordButton />
+                <BarreRecordButton />
               </div>
               section 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aperiam sed libero aut iusto dolorum neque iure et eligendi sequi,
               totam provident rem qui voluptates labore voluptatum maiores.
-              Laborum exercitationem sit eum maiores asperiores, corporis
-              recusandae sed eius inventore omnis labore ad culpa cupiditate,
-              sunt unde quo, quasi voluptate quos. Perferendis repudiandae eum
-              deserunt necessitatibus, velit sunt ipsa illum nesciunt inventore
-              maxime dolore qui quo quas rem labore ipsam recusandae iste,
-              voluptatibus voluptates totam eligendi dolor dolorum consequatur
-              blanditiis! Doloribus sint eligendi iure consequuntur iusto amet
-              quod voluptatibus adipisci tempore, enim tenetur asperiores, iste
-              repudiandae excepturi omnis repellendus perspiciatis rerum
-              inventore velit architecto necessitatibus. Inventore, nulla
-              exercitationem
+              <div className="flex  gap-2">
+                <RecordButton />
+              </div>
             </section>
             <section className="max-w-[800px] min-w-[500px] relative sectionPost">
               <Posts />
