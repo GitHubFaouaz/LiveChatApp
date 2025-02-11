@@ -11,6 +11,7 @@ import Posts from "../composant/Posts";
 import PostShar from "../composant/PostShar";
 import MiniBtnPageBody from "../composant/MiniBtnPageBody";
 import RecordButton from "../composant/RecordButton";
+import ProfilButton from "../composant/ProfilButton ";
 import BarreRecordButton from "../composant/BarreRecordButton";
 
 export default function page() {
@@ -95,7 +96,7 @@ export default function page() {
               Aperiam sed libero aut iusto dolorum neque iure et eligendi sequi,
               totam provident rem qui voluptates labore voluptatum maiores.
               <div className="flex  gap-2">
-                <RecordButton />
+                <ProfilButton />
               </div>
             </section>
             <section className="max-w-[800px] min-w-[500px] relative sectionPost">
