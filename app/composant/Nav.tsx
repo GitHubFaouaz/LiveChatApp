@@ -58,7 +58,7 @@ const Nav = () => {
           </Link>
         </li>
 
-        <li className="customLiNav">
+        {/* <li className="customLiNav">
           <Link
             href="/home"
             className={pathname === "/profil" ? "active-link" : ""}
@@ -67,7 +67,7 @@ const Nav = () => {
               <IoPersonOutline />{" "}
             </span>
           </Link>
-        </li>
+        </li> */}
         <li className="customLiNav">
           <Link
             href="/chat"

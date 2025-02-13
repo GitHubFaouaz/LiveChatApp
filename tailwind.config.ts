@@ -8,10 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        custom: ["Grechen Fuemen"],
       },
+      // colors: {
+      //   background: "var(--background)",
+      //   foreground: "var(--foreground)",
+      // },
       backgroundImage: {
         bgHomedeg:
           "linear-gradient(90deg, #2b2b2b, #797878  40%, #797878  60%, #2b2b2b)",

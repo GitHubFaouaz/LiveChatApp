@@ -92,6 +92,9 @@ export default function page() {
                 <RecordButton />
                 <BarreRecordButton />
               </div>
+              <div>
+                
+              </div>
               section 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aperiam sed libero aut iusto dolorum neque iure et eligendi sequi,
               totam provident rem qui voluptates labore voluptatum maiores.

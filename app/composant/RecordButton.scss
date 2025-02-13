@@ -30,12 +30,6 @@
     background: #000;
     box-shadow: inset 0px 0px 15px 0px #000000, inset 0px 0px 20px 0px #979696,
       0px 0px 0px 0px #b5b5b5;
-    span {
-      width: 20px;
-      height: 30px;
-      background: var(--colorOrange);
-      border-radius: 30%;
-      box-shadow: 2px 2px 5px var(--colorOrange);
-    }
+    color: var(--colorOrange);
   }
 }
