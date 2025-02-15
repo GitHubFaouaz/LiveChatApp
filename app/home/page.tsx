@@ -13,6 +13,7 @@ import MiniBtnPageBody from "../composant/MiniBtnPageBody";
 import RecordButton from "../composant/RecordButton";
 import ProfilButton from "../composant/ProfilButton ";
 import BarreRecordButton from "../composant/BarreRecordButton";
+import BlocButton from "../composant/blocButton";
 
 export default function page() {
   const { data: session } = useSession();
@@ -93,11 +94,9 @@ export default function page() {
                 <BarreRecordButton />
               </div>
               <div>
-                
+                <BlocButton />
               </div>
-              section 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aperiam sed libero aut iusto dolorum neque iure et eligendi sequi,
-              totam provident rem qui voluptates labore voluptatum maiores.
+
               <div className="flex  gap-2">
                 <ProfilButton />
               </div>
