@@ -1,0 +1,9 @@
+#containeBlocButton > div {
+  background-color: rgb(41, 38, 38);
+}
+#containeBlocButton .spanBarre::before {
+  content: "";
+  width: 50%;
+  background: var(--colorOrange);
+  height: 5px;
+}/*# sourceMappingURL=blocButton.css.map */

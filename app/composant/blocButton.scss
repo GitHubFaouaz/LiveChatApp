@@ -1,0 +1,12 @@
+#containeBlocButton {
+  // background: #c90b0b;
+  & > div {
+    background-color: rgb(41 38 38);
+  }
+  .spanBarre::before {
+    content: "";
+    width: 50%;
+    background: var(--colorOrange);
+    height: 5px;
+  }
+}

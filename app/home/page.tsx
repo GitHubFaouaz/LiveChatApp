@@ -13,7 +13,7 @@ import MiniBtnPageBody from "../composant/MiniBtnPageBody";
 import RecordButton from "../composant/RecordButton";
 import ProfilButton from "../composant/ProfilButton ";
 import BarreRecordButton from "../composant/BarreRecordButton";
-import BlocButton from "../composant/blocButton";
+import BlocButton from "../composant/BlocButton";
 
 export default function page() {
   const { data: session } = useSession();
