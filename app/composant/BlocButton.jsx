@@ -6,11 +6,11 @@ export default function blocButton() {
       <div className=" w-[100%] rounded-[15px] p-[15px] border-4 border-[#000]  ">
         <span className="w-[100%]  bg-[#000] p-[5px] flex  spanBarre  "></span>
       </div>
-      <div className=" w-[100%] rounded-[35px] p-[5px] border-4 border-[#000] flex justify-around ">
-        <span className="w-[50px] h-[50px]   bg-[#000] p-[5px]   rounded-3xl "></span>
-        <span className="w-[50px] h-[50px]  bg-[#fff] p-[5px] rounded-3xl   "></span>
-        <span className="w-[50px] h-[50px]  bg-[#333] p-[5px] rounded-3xl   "></span>
-        <span className="w-[50px] h-[50px]  bg-[#555] p-[5px] rounded-3xl   "></span>
+      <div className=" w-[100%] rounded-[35px] p-[5px] border-4 border-[#000] flex justify-around containe-button-deco">
+        <span className="w-[30px] h-[30px]   bg-[var(--colorOrange)] p-[5px] rounded-3xl bt1 "></span>
+        <span className="w-[30px] h-[30px]   bg-[var(--colorOrange)] p-[5px] rounded-3xl bt2  "></span>
+        <span className="w-[30px] h-[30px]   bg-[var(--colorOrange)] p-[5px] rounded-3xl bt3  "></span>
+        <span className="w-[30px] h-[30px]   bg-[var(--colorOrange)] p-[5px] rounded-3xl  bt4 "></span>
       </div>
       <div></div>
     </div>

@@ -1,14 +1,33 @@
 #containeBlocButton {
-  // background: #c90b0b;
   & > div {
     background-color: rgb(41 38 38);
+
+    .spanBarre::before {
+      content: "";
+      width: 50%;
+      background: var(--colorOrange);
+      height: 5px;
+      box-shadow: 0 0 5px var(--colorOrange), 0 0 10px var(--colorOrange),
+        0 0 20px 5px var(--colorOrange);
+    }
   }
-  .spanBarre::before {
-    content: "";
-    width: 50%;
-    background: var(--colorOrange);
-    height: 5px;
-    box-shadow: 0 0 5px var(--colorOrange), 0 0 10px var(--colorOrange),
-      0 0 20px 5px var(--colorOrange);
+
+  .containe-button-deco {
+    .bt1 {
+      border: 8px #000 dashed;
+      box-shadow: 0px 0 10px #000 inset;
+    }
+    .bt2 {
+      border: 6px #000 dotted;
+      box-shadow: 0px 0 10px #000 inset;
+    }
+    .bt3 {
+      border: 9px #000 double;
+      box-shadow: 0px 0px 2px 3px #000;
+    }
+    .bt4 {
+      border: 9px #000 ridge;
+      box-shadow: 0px 0 10px #000 inset;
+    }
   }
 }
